@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f7f7f7;
 }
 
 .calculator {
@@ -20,17 +21,23 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.screen {
+#screen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: #333;
     grid-column: span 4;
-    height: 120px;
+    height: 100px;
 }
 
-.calculator > .clear {
+.calculator > #clear {
     grid-column: span 2;
     background-color: #ffb3ba;
 }
 
-.calculator > .delete {
+.calculator > #delete {
     grid-column: span 2;
     background-color: #bae1ff;
 }
@@ -42,18 +49,20 @@ body {
     margin: 0.2rem;
     border-radius: 8px;
     border: 2px solid black;
-    background-color: #f8f8f8;
+    background-color: #f7f7f7;
     font-size: 1rem;
+    font-weight: 500;
 }
 
 .calculator > .btn:hover {
-    background-color: #d0d0d0;
+    background-color: #d6d6d6;
+    cursor: pointer;
 }
 
-.calculator > .clear:hover {
-    background-color: #e99;
+.calculator > #clear:hover {
+    background-color: #ff929d;
 }
 
-.calculator > .delete:hover {
+.calculator > #delete:hover {
     background-color: #81c7fd;
 }
