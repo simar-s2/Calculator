@@ -10,11 +10,16 @@ numberbtns.forEach((btn) =>
 )
 
 deletebtn.addEventListener('click', removeNumber);
+clearbtn.addEventListener('click', clearScreen);
 
 function appendNumber(number) {
     screen.textContent += number;
 }
 
 function removeNumber() {
-    screen.textContent = screen.textContent.toString().slice(0, -1)
+    screen.textContent = screen.textContent.toString().slice(0, -1);
+}
+
+function clearScreen () {
+    screen.textContent = '';
 }
