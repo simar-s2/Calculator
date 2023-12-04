@@ -9,10 +9,10 @@ const pointbtn = document.getElementById('point');
 
 let num1 = '';
 let num2 = '';
-let operand = '';
+let operation = '';
 
 // Event Listeners
-equalsbtn.addEventListener('click', () => evaluate(operand, num1, num2));
+equalsbtn.addEventListener('click', () => evaluate(operation, num1, num2));
 deletebtn.addEventListener('click', removeNumber);
 clearbtn.addEventListener('click', clearScreen);
 pointbtn.addEventListener('click', addPoint);
@@ -40,44 +40,62 @@ function clearScreen () {
     screen.textContent = '';
     num1 = '';
     num2 = '';
-    operand = '';
+    operation = '';
 }
 
 // Selects operation to perform
-function addOperation(operation) {
-    if(operand !== ''){
+function addOperation(opp) {
+    if(operation !== ''){
         return;
     }
     else {
+        // Sets the first operand
         num1 = screen.textContent;
-        screen.textContent += operation;
-        operand = operation;
+        // Sets the operation
+        operation = opp;
+        // Clears screen for second operand
         screen.textContent = '';
     }
 }
 
-function evaluate(operand, num1, num2) {
+// Evaluates operands
+function evaluate(opp, num1, num2) {
     num2 += screen.textContent;
-    switch (operand) {
+    a = Number(num1);
+    b = Number(num2);
+    switch (opp) {
         case '+':
-            screen.textContent = num1 + num2;
+            screen.textContent = a + b;
             break;
         case '−':
-            screen.textContent = num1 - num2;
+            screen.textContent = a - b;
             break;
         case '×':
-            screen.textContent = num1 * num2;
+            screen.textContent = a * b;
             break;
+        // Adds a case so user cannot divide by 0
         case '÷':
-            screen.textContent = num1 / num2;
+            if(b == 0){
+                clearScreen()
+                alert('You cannot divide by 0!');
+                break;
+            }
+            screen.textContent = a / b;
+            break;
         default:
             break;
     }
+    // Resets operation and both operands after evaluating 
+    // This allows the user to type in a new operation with the result
+    // The result becomes the first operand in that case
+    num1 = '';
+    num2 = '';
+    operation = '';
 }
 
 // Adds a decimal point
-// If there is already one point the user cannot add one more
 function addPoint() {
+    // If a point already exists on the screen the user cannot add more
     if(screen.textContent.includes('.')){
         return;
     }
