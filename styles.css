@@ -66,3 +66,15 @@ body {
 .calculator > #delete:hover {
     background-color: #81c7fd;
 }
+
+.calculator > .btn:active {
+    background-color: #bababa;
+}
+
+.calculator > #delete:active {
+    background-color: #55b3fa;
+}
+
+.calculator > #clear:active {
+    background-color: #fa6473;
+}
