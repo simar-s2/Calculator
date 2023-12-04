@@ -15,7 +15,7 @@ let operand = '';
 equalsbtn.addEventListener('click', () => evaluate(operand, num1, num2));
 deletebtn.addEventListener('click', removeNumber);
 clearbtn.addEventListener('click', clearScreen);
-// pointbtn.addEventListener('click', addPoint);
+pointbtn.addEventListener('click', addPoint);
 
 numberbtns.forEach((btn) =>
     btn.addEventListener('click', () => appendNumber(btn.textContent))
@@ -77,11 +77,11 @@ function evaluate(operand, num1, num2) {
 
 // Adds a decimal point
 // If there is already one point the user cannot add one more
-// function addPoint() {
-//     if(screen.textContent.includes('.')){
-//         return;
-//     }
-//     else {
-//         screen.textContent += '.';
-//     }
-// }
+function addPoint() {
+    if(screen.textContent.includes('.')){
+        return;
+    }
+    else {
+        screen.textContent += '.';
+    }
+}
