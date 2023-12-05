@@ -65,13 +65,13 @@ function evaluate(opp, num1, num2) {
     b = Number(num2);
     switch (opp) {
         case '+':
-            screen.textContent = a + b;
+            screen.textContent = roundNumber(a + b);
             break;
         case '−':
-            screen.textContent = a - b;
+            screen.textContent = roundNumber(a - b);
             break;
         case '×':
-            screen.textContent = a * b;
+            screen.textContent = roundNumber(a * b);
             break;
         // Adds a case so user cannot divide by 0
         case '÷':
@@ -80,7 +80,7 @@ function evaluate(opp, num1, num2) {
                 alert('You cannot divide by 0!');
                 break;
             }
-            screen.textContent = a / b;
+            screen.textContent = roundNumber(a / b);
             break;
         default:
             break;
@@ -91,6 +91,10 @@ function evaluate(opp, num1, num2) {
     num1 = '';
     num2 = '';
     operation = '';
+}
+
+function roundNumber(number) {
+    return (Math.round(number * 1000) / 1000);
 }
 
 // Adds a decimal point
