@@ -3,7 +3,7 @@
 A browser calculator built with plain HTML, CSS, and JavaScript. One of
 [The Odin Project](https://www.theodinproject.com/) foundations exercises.
 
-> 📸 **Screenshot needed**: the calculator with a calculation on the display (for example `12 × 8 = 96`). Save to `docs/calculator.png` and replace this line with `![Calculator](docs/calculator.png)`.
+![Calculator](docs/calculator.png)
 
 ## Run it
 
